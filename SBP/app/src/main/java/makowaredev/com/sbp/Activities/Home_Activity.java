@@ -1,22 +1,21 @@
-package makowaredev.com.sbp;
+package makowaredev.com.sbp.Activities;
 
 import android.app.Activity;
 
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import makowaredev.com.sbp.Frags.NavigationDrawerFragment;
+import makowaredev.com.sbp.Frags.NewsFragment;
+import makowaredev.com.sbp.R;
 
 
 public class Home_Activity extends Activity
@@ -51,21 +50,48 @@ public class Home_Activity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        switch (position) {
+            //Home Fragment
+            case 1:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+                break;
+            //News Fragment
+            case 2:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, NewsFragment.newInstance(position + 1))
+                        .commit();
+                break;
+            //Events Fragment
+            case 3:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+                break;
+            //Walls Fragment
+            case 4:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+                break;
+        }
+
     }
 
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.home);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+                mTitle = getString(R.string.news);
                 break;
             case 3:
-                mTitle = getString(R.string.title_section3);
+                mTitle = getString(R.string.events);
+                break;
+            case 4:
+                mTitle = getString(R.string.walls);
                 break;
         }
     }

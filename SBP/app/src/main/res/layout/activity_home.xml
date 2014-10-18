@@ -25,7 +25,7 @@
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:name="makowaredev.com.sbp.NavigationDrawerFragment"
+        android:name="makowaredev.com.sbp.Frags.NavigationDrawerFragment"
         tools:layout="@layout/navigation_drawer_frag" />
 
 </android.support.v4.widget.DrawerLayout>
