@@ -1,4 +1,4 @@
-package sbp.makowaredev.com.sbp;
+package makowaredev.com.sbp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
