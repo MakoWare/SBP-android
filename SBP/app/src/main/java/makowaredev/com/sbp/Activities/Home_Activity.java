@@ -5,13 +5,16 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.util.Log;
 import android.support.v4.widget.DrawerLayout;
+
 
 import makowaredev.com.sbp.Frags.NavigationDrawerFragment;
 import makowaredev.com.sbp.Frags.NewsFragment;
@@ -19,17 +22,11 @@ import makowaredev.com.sbp.R;
 
 
 public class Home_Activity extends Activity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, NewsFragment.OnFragmentInteractionListener {
 
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
     private CharSequence mTitle;
+    private final String TAG = "Home_Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,25 +49,25 @@ public class Home_Activity extends Activity
         FragmentManager fragmentManager = getFragmentManager();
         switch (position) {
             //Home Fragment
-            case 1:
+            case 0:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
                 break;
             //News Fragment
-            case 2:
+            case 1:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, NewsFragment.newInstance(position + 1))
                         .commit();
                 break;
             //Events Fragment
-            case 3:
+            case 2:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
                 break;
             //Walls Fragment
-            case 4:
+            case 3:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
@@ -127,6 +124,11 @@ public class Home_Activity extends Activity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onNewsItemSelected(Uri uri) {
+
     }
 
     /**

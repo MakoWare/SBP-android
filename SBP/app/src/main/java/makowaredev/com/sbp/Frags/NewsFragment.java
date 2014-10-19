@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import makowaredev.com.sbp.R;
-
+import makowaredev.com.sbp.Activities.Home_Activity;
 public class NewsFragment extends Fragment {
     private static final String SECTION_NUMBER = "sectionNumber";
     private int sectionNumber;
@@ -30,7 +30,7 @@ public class NewsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            sectionNumber = getArguments().getInt(SECTION_NUMBER);
+            this.sectionNumber = getArguments().getInt(SECTION_NUMBER);
         }
     }
 
@@ -43,14 +43,15 @@ public class NewsFragment extends Fragment {
 
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onNewsItemSelected(uri);
         }
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        super.onAttach(activity);
+        ((Home_Activity) activity).onSectionAttached(
+                getArguments().getInt(SECTION_NUMBER));
         try {
             mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
@@ -66,8 +67,7 @@ public class NewsFragment extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
+            public void onNewsItemSelected(Uri uri);
     }
 
 }
