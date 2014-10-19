@@ -7,11 +7,19 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android .support.v7.widget.RecyclerView;
+import android .support.v7.widget.LinearLayoutManager;
 
+import makowaredev.com.sbp.Adapters.NewsAdapter;
 import makowaredev.com.sbp.R;
 import makowaredev.com.sbp.Activities.Home_Activity;
+
 public class NewsFragment extends Fragment {
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
     private static final String SECTION_NUMBER = "sectionNumber";
+    private String[] data;
     private NewsFragmentCallbacks mListener;
 
     public static NewsFragment newInstance(int sectionNumber) {
@@ -33,11 +41,25 @@ public class NewsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_news, container, false);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.fragment_news, container, false);
+        this.data = new String[2];
+        this.data[0] = "taco";
+        this.data[1] = "loco";
+
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // specify an adapter (see also next example)
+        mAdapter = new NewsAdapter(this.data);
+        mRecyclerView.setAdapter(mAdapter);
+
+        return view;
+    }
 
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
