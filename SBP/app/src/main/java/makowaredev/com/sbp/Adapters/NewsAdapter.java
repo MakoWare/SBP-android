@@ -17,10 +17,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView mTextView;
+        public TextView dayTextView;
+        public TextView monthTextView;
+        public TextView titleTextView;
+        public TextView bodyTextView;
         public ViewHolder(View view) {
             super(view);
-            mTextView = (TextView) view.findViewById(R.id.textView);
+            dayTextView = (TextView) view.findViewById(R.id.dayTextView);
+            monthTextView = (TextView) view.findViewById(R.id.monthTextView);
+            titleTextView = (TextView) view.findViewById(R.id.titleTextView);
+            bodyTextView = (TextView) view.findViewById(R.id.bodyTextView);
         }
     }
 
@@ -46,7 +52,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(mDataset[position]);
+        holder.dayTextView.setText("13");
+        holder.monthTextView.setText("Oct");
+        holder.titleTextView.setText("Crazy New Boulders");
+        holder.bodyTextView.setText("These boulders are so fucking huge you will die");
 
     }
 

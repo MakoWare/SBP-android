@@ -44,9 +44,11 @@ public class NewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_news, container, false);
-        this.data = new String[2];
+        this.data = new String[4];
         this.data[0] = "taco";
         this.data[1] = "loco";
+        this.data[2] = "loco";
+        this.data[3] = "loco";
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
