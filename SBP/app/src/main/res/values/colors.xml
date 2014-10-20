@@ -3,8 +3,10 @@
     <color name="lightOrange">#ffffa018</color>
     <color name="darkOrange">#ffd78116</color>
     <color name="white">#ffffffff</color>
-
-
+    <color name="gray1">#ffe8e8e8</color>
+    <color name="gray2">#ffd4d4d4</color>
+    <color name="darkGray">#ff261109</color>
+    <color name="primaryText">#ff52524f</color>
 
 
 </resources>
