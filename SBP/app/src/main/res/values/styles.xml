@@ -1,10 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="MaterialDarkTheme" parent="android:Theme.Material.Light">
-        <item name="android:colorPrimary">@color/lightOrange</item>
-        <item name="android:colorPrimaryDark">@color/darkGray</item>
-        <item name="android:textColorPrimary">@color/white</item>
+    <style name="MaterialDarkTheme" parent="android:Theme.Holo.Light">
 
     </style>
 
