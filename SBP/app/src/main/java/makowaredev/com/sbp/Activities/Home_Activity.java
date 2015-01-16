@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import android.app.ActionBar;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,13 +17,14 @@ import makowaredev.com.sbp.Frags.EventsFragment;
 import makowaredev.com.sbp.Frags.HomeFragment;
 import makowaredev.com.sbp.Frags.NavigationDrawerFragment;
 import makowaredev.com.sbp.Frags.NewsFragment;
+import makowaredev.com.sbp.Frags.WallsFragment;
 import makowaredev.com.sbp.R;
 
 
 public class Home_Activity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks,
         NewsFragment.NewsFragmentCallbacks, EventsFragment.EventFragmentCallbacks,
-        HomeFragment.HomeFragmentCallbacks {
+        HomeFragment.HomeFragmentCallbacks, WallsFragment.WallsFragmentCallbacks {
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
@@ -41,6 +43,8 @@ public class Home_Activity extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        onNavigationDrawerItemSelected(0);
     }
 
     @Override
@@ -68,9 +72,14 @@ public class Home_Activity extends Activity
                 break;
             //Walls Fragment
             case 3:
+
+                Intent intent = new Intent(this, Walls_Activity.class);
+                startActivity(intent);
+                /*
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, EventsFragment.newInstance(position + 1))
+                        .replace(R.id.container, WallsFragment.newInstance(position + 1))
                         .commit();
+                        */
                 break;
         }
 
@@ -142,6 +151,12 @@ public class Home_Activity extends Activity
     //Home Fragment Callbacks
     @Override
     public void onHomeInteraction(Uri uri) {
+
+    }
+
+    //Wall Fragment Callbacks
+    @Override
+    public void onWallInteraction(Uri uri) {
 
     }
 }

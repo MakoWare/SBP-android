@@ -55,7 +55,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.dayTextView.setText("13");
         holder.monthTextView.setText("Oct");
         holder.titleTextView.setText("Crazy New Boulders");
-        holder.bodyTextView.setText("These boulders are so fucking huge you will die");
+        holder.bodyTextView.setText("All New Boulders on the North Wall");
 
     }
 

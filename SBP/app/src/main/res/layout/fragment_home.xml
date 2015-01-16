@@ -1,9 +1,35 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="makowaredev.com.sbp.Frags.HomeFragment">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="makowaredev.com.sbp.Frags.HomeFragment"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/sbp_panorama5" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome to the Seattle Bouldering Project"
+        android:id="@+id/textView2"
+        android:textAlignment="center"
+        android:phoneNumber="false"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Hello"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
+
