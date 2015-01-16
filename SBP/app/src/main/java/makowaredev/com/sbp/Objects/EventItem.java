@@ -1,6 +1,8 @@
 package makowaredev.com.sbp.Objects;
 
-public class EventItem {
+import java.io.Serializable;
+
+public class EventItem implements Serializable {
     private String date;
 
 

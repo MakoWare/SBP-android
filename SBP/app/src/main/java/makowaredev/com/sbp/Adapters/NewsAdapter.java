@@ -52,10 +52,27 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.dayTextView.setText("13");
-        holder.monthTextView.setText("Oct");
-        holder.titleTextView.setText("Crazy New Boulders");
-        holder.bodyTextView.setText("All New Boulders on the North Wall");
+        if(position == 0) {
+            holder.dayTextView.setText("13");
+            holder.monthTextView.setText("Dec");
+            holder.titleTextView.setText("Crazy New Boulders");
+            holder.bodyTextView.setText("All New Boulders on the North Wall");
+        } else if(position == 1) {
+            holder.dayTextView.setText("7");
+            holder.monthTextView.setText("Nov");
+            holder.titleTextView.setText("Gym Closing for Maintenance");
+            holder.bodyTextView.setText("The North Room and the Basement will be closed tody");
+        } else if(position == 2){
+            holder.dayTextView.setText("22");
+            holder.monthTextView.setText("Sep");
+            holder.titleTextView.setText("Climbing Competition");
+            holder.bodyTextView.setText("NorthWest BoulderFest this Saturday!");
+        } else {
+            holder.dayTextView.setText("5");
+            holder.monthTextView.setText("Sep");
+            holder.titleTextView.setText("More Great Routes");
+            holder.bodyTextView.setText("This Thursday the Roof will be reset");
+        }
 
     }
 

@@ -1,6 +1,8 @@
 package makowaredev.com.sbp.Objects;
 
-public class NewsItem {
+import java.io.Serializable;
+
+public class NewsItem implements Serializable{
     private String day;
     private String month;
     private String title;

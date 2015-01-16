@@ -7,8 +7,46 @@
     <!-- A CardView that contains a TextView -->
 
     <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="4dp"
+            android:elevation="2dp"
+            android:translationZ="2dp"
+            android:layout_margin="4dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:id="@+id/cardImageView"
+                    android:background="@drawable/sbp_panorama4" />
+
+
+                <TextView
+                    android:id="@+id/cardTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Fresh Boulders every Tuesday Thursday.  It&apos;s like Christmas all over again" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
+        android:id="@+id/card_view2"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -26,19 +64,57 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:id="@+id/cardImageView"
-                android:src="@drawable/sbp_stamp" />
+                android:layout_height="140dp"
+                android:id="@+id/cardImageView2"
+                android:background="@drawable/sbp_panorama3" />
 
 
             <TextView
-                android:id="@+id/cardTextView"
+                android:id="@+id/cardTextView2"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:text="Card Text" />
+                android:text="The SBP is Expanding! Look forward to more surface to get your hands on." />
 
         </LinearLayout>
+
+
     </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view3"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="4dp"
+            android:elevation="2dp"
+            android:translationZ="2dp"
+            android:layout_margin="4dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:id="@+id/cardImageView3"
+                    android:background="@drawable/sbp_panorama1" />
+
+
+                <TextView
+                    android:id="@+id/cardTextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Dance Party at SBP Oct 10th!  Enjoy music by DJ Fresh with Kegs gettig tapped at 8pm. " />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
 
 
 
